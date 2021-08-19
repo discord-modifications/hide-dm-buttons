@@ -4,7 +4,7 @@ const { inject, uninject } = require('powercord/injector');
 
 const DMsList = getModule(m => m.default?.displayName == 'ConnectedPrivateChannelsList', false);
 
-module.exports = class extends Plugin {
+module.exports = class HideDMButtons extends Plugin {
    startPlugin() {
       inject('hide-dm-buttons', DMsList, 'default', (args, res) => {
          let Arguments = args[0];
