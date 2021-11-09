@@ -9,7 +9,7 @@ module.exports = class HideDMButtons extends Plugin {
       inject('hide-dm-buttons', DMsList, 'default', (args, res) => {
          let Arguments = args[0];
          if (Arguments?.children) {
-            Arguments.children = [Arguments?.children?.find(i => i?.toString().includes('"friends"'))];
+            Arguments.children = Arguments.children.filter(a => a?.key == 'friends');
          }
 
          return args;
